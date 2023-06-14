@@ -1,7 +1,7 @@
 PEOG
 ===========
 
-PEOG written in Rust, python code generator that checks if input is odd or even. Code example from it looks like this:
+PEOG written in Rust, python code generator. It generate the code that checks if input is odd or even. The example of generated code from it looks like this:
 ```python
 [...]
 elif input == 32:
