@@ -3,6 +3,7 @@ use std::fs::File;
 use std::io::prelude::*;
 
 fn main() {
+    let writing_error: String = "ERROR! -> Some think is wrong with writing the file".to_string();
     let args: Vec<String> = env::args().collect();
 
     if args.len() != 4 {
@@ -39,47 +40,47 @@ fn main() {
 
     // FIRST LINES FOR PYTHON CODE
     // INPUT AND CODE SECURITY
-    writeln!(&file, "while True:").expect("Error writing to file");
-    writeln!(&file, "   try:").expect("Error writing to file");
-    writeln!(&file, "      input_number = int(input('Enter a number to check: '))").expect("Error writing to file");
-    writeln!(&file, "   except ValueError:").expect("Error writing to file");
-    writeln!(&file, "      print('\\tERROR! -> WRONG INPUT. ENTER AGAIN\\n')").expect("Error writing to file");
-    writeln!(&file, "");  // empty line
+    writeln!(&file, "while True:").expect(&writing_error);
+    writeln!(&file, "   try:").expect(&writing_error);
+    writeln!(&file, "      input_number = int(input('Enter a number to check: '))").expect(&writing_error);
+    writeln!(&file, "   except:").expect(&writing_error);
+    writeln!(&file, "      print('ERROR! -> WRONG INPUT. ENTER AGAIN')").expect(&writing_error);
 
     for i in first_number..=last_number {
         if i == first_number {
             writeln!(&file, "   if input_number == {}:", &i)
-                .expect("Error writing to file");
+                .expect(&writing_error);
 
             if i % 2 == 0 {
                 writeln!(&file, "       print('Even')")
-                    .expect("Error writing to file");
+                    .expect(&writing_error);
             } else {
                 writeln!(&file, "       print('Odd')")
-                    .expect("Error writing to file");
+                    .expect(&writing_error);
             }
 
             writeln!(&file, "")
-                .expect("Error writing to file");
+                .expect(&writing_error);
         } else {
             writeln!(&file, "   elif input_number == {}:", &i)
-                .expect("Error writing to file");
+                .expect(&writing_error);
 
             if i % 2 == 0 {
                 writeln!(&file, "       print('Even')")
-                    .expect("Error writing to file");
+                    .expect(&writing_error);
             } else {
                 writeln!(&file, "       print('Odd')")
-                    .expect("Error writing to file");
+                    .expect(&writing_error);
             }
-
-            writeln!(&file, "") // empty line
-                .expect("Error writing to file");
         }
     }
 
     writeln!(&file, "   else:")
-        .expect("Error writing to file");
+        .expect(&writing_error);
     writeln!(&file, "       print('This number is out of range')")
-        .expect("Error writing to file");
+        .expect(&writing_error);
+
+    println!("THE CREATION OF A {}.py WAS SUCCESSFUL", &args[1]);
+    println!("You should find {}.py in peog directory", &args[1]);
+    println!("ENJOY!!!");
 }
