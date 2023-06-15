@@ -1,5 +1,5 @@
 PEOG
-===========
+====
 
 PEOG written in Rust, python code generator. It generate the code that checks if input is odd or even. The example of generated code from it looks like this:
 ```python
@@ -12,35 +12,70 @@ elif input == 34:
 	print("Even")
 [...]
 ```
-Isn't it BEAUTIFUL???
+**Isn't it BEAUTIFUL???**
 
 
-# Requirements
+## ⚙️ Requirements
 Before getting started, make sure you have the following requirements installed on your computer:
-- Cargo
-- Python
+- **Cargo**
+- **Python**
 
-# GETTING STARTED
-- Clone the repository
+## 🚀 GETTING STARTED
+- ### BASH
+    - Clone the repository
 
-    ```bash
-    mkdir peog
-    cd peog
-    git clone https://github.com/kmtrebacz/peog.git .
-    ```
-- Compile the code
+        ```bash
+        mkdir peog
+        cd peog
+        git clone https://github.com/kmtrebacz/peog.git .
+        ```
 
-    ```bash
-    cargo build
-    ```
-- Run the program
+    - Compile the code
 
-    ```bash
-    ./target/debug/peog even_odd_python -20000 20000
-    ```
-- If you did't get any errors, you can run this BEAUTIFUL peace of code
+        ```bash
+        cargo build
+        ```
 
-    ```bash
-    python ./even_odd_python.py
-    ```
-- Enjoy!
+    - Run the program
+
+        ```bash
+        ./target/debug/peog even_odd_python -20000 20000
+        ```
+
+    - If you did't get any errors, you can run this BEAUTIFUL peace of code
+
+        ```bash
+        python ./even_odd_python.py
+        ```
+		
+    - ENJOY!
+
+
+- ### POWERSHELL
+    - Clone the repository
+
+        ```bash
+        mkdir peog
+        cd .\peog
+        git clone https://github.com/kmtrebacz/peog.git .
+        ```
+
+    - Compile the code
+
+        ```bash
+        cargo build
+        ```
+
+    - Run the program
+
+        ```bash
+        .\target\debug\peog.exe even_odd_python -20000 20000
+        ```
+
+    - If you did't get any errors, you can run this BEAUTIFUL peace of code
+
+        ```bash
+        python .\even_odd_python.py
+        ```
+	
+    - ENJOY!
